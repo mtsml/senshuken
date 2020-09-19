@@ -1,10 +1,20 @@
 import React from 'react'
+import { Container } from 'mdbreact'
 
-const Answer = () => {
+const Answer = (props) => {
+    const { text, result } = props.answer
     return (
-        <p>
-        〇〇でした
-        </p>
+        <Container>
+            <p>
+                {result
+                    ? '正解！'
+                    : '残念！'
+                }
+            </p>
+            <p>
+                {text}
+            </p>
+        </Container>
     )
 }
 
