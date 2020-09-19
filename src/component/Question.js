@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'mdbreact'
+import Choice from './Choice'
 
 const Question = (props) => {
     const item = props.item
@@ -8,11 +9,7 @@ const Question = (props) => {
             <p>
                 {item.text}
             </p>
-            {item.type==='SA' && 
-                <ul>
-                    {item.options.map(option => <li>{option}</li>)}
-                </ul>
-            }
+            {item.type==='SA' && item.choices.map(choice => <Choice choice={choice} />)}
         </Container>
     )
 }
