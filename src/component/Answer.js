@@ -4,12 +4,9 @@ import { Container } from 'mdbreact'
 const Answer = (props) => {
     const { text, result } = props.answer
     return (
-        <Container>
+        <Container className='mt-3'>
             <p>
-                {result
-                    ? '正解！'
-                    : '残念！'
-                }
+                {result ? '正解！' : '残念！' }
             </p>
             <p>
                 {text}
