@@ -37,6 +37,20 @@ app.get('/senshuken', async (req, res) => {
 
 app.get('/senshuken/:senshuken_id', async (req, res) => {
     console.log('/senshuken/:senshuken_id')
+    let senshuken = {}
+
+    const client = pgConnect()
+    await client.connect()
+        .then(() => client.query(`SELECT * FROM senshuken WHERE senshuken_id = ${req.params.senshuken_id};`))
+        .then((res) => senshuken = res.rows[0])
+        .catch((err) => console.log(err))
+        .finally(() => client.end())
+
+    res.json({senshuken})
+})
+
+app.get('/senshuken/:senshuken_id/question', async (req, res) => {
+    console.log('/senshuken/:senshuken_id/question')
     let questions = []
 
     const client = pgConnect()
