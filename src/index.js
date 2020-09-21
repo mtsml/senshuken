@@ -5,11 +5,14 @@ import "bootstrap-css-only/css/bootstrap.min.css"
 import "mdbreact/dist/css/mdb.css"
 import Router from './container/Router.js'
 import { Provider } from './reducer/index'
+import ErrorBoundary from './container/ErrorBoundary'
 
 
 ReactDOM.render(
-    <Provider>
-        <Router />
-    </Provider>,
+    <ErrorBoundary>
+        <Provider>
+            <Router />
+        </Provider>
+    </ErrorBoundary>,
     document.getElementById('root')
 )

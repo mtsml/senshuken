@@ -70,12 +70,30 @@ app.get('/senshuken/:senshuken_id/question', async (req, res) => {
     res.json({questions})
 })
 
-app.post('/answer/:id', (req, res) => {
-    console.log('/answer')
-    const id = req.params.id
-    const choice = req.body.choice
-    const answer = answers[id-1]
-    res.json({answer: {...answer, result: answer.correct===choice}})
+app.get('/senshuken/:senshuken_id/question/:question_id', async (req, res) => {
+    console.log('/senshuken/:senshuken_id/question/:question_id')
+    let answer = {}
+    const senshuken_id = req.params.senshuken_id
+    const question_id = req.params.question_id
+ 
+    const client = pgConnect()
+    await client.connect()
+        .then(() => client.query(`
+            SELECT
+                answer_text
+                ,(SELECT array_agg(value ORDER BY answer_id ASC) FROM answer WHERE senshuken_id = ${senshuken_id} AND question_id = ${question_id}) AS answers
+            FROM
+                question
+            WHERE
+                senshuken_id = ${senshuken_id}
+                AND question_id = ${question_id}
+            ;
+        `))
+        .then((res) => answer = res.rows[0])
+        .catch((err) => console.log(err))
+        .finally(() => client.end())
+
+    res.json({...answer})
 })
 
 server = app.listen(port)
