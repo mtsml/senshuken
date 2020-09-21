@@ -19,16 +19,13 @@ const Senshuken = () => {
     }
 
     return (
-        <Container className='mt-5'>
+        <Container className='mt-5 pt-4'>
             {senshukens.length!==0 && senshukens.map(senshuken => (
-                <Link to={`/senshuken/${senshuken.senshuken_id}`} className='text-clear'>
+                <Link to={`/senshuken/${senshuken.senshuken_id}`}>
                     <Card className='mb-3 p-3'>
-                        <h2>
+                        <h3 className='text-center text-dark m-0'>
                             {`第一回！${senshuken.title}選手権！！！`}
-                        </h2>
-                        <p>
-                            {senshuken.description}
-                        </p>
+                        </h3>
                     </Card>
                 </Link>
             ))}
