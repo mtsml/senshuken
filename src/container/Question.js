@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom'
 import axios from 'axios'
 import { Button, Container, MDBIcon } from 'mdbreact'
 import Footer from './Footer'
@@ -46,6 +47,10 @@ const Question = (props) => {
                 setQuestions(newState)
             })
             .catch((err) => alert(err))
+    }
+
+    const moveToResult = () => {
+        props.history.push(`/senshuken/${state.senshuken_id}/result`)
     }
 
     return (
@@ -108,8 +113,7 @@ const Question = (props) => {
                     <button 
                         className='btn px-3 py-2 ml-3' 
                         style={{backgroundColor: '#3F729B'}}
-                        disabled={activeQuestion===questions.length-1}
-                        onClick={() => setActiveQuestion(activeQuestion+1)}
+                        onClick={() => activeQuestion===questions.length-1?moveToResult():setActiveQuestion(activeQuestion+1)}
                     >
                         <MDBIcon icon="angle-right" size='2x'/>
                     </button>
@@ -119,4 +123,4 @@ const Question = (props) => {
     )
 }
 
-export default Question
+export default withRouter(Question)
