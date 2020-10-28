@@ -12,7 +12,7 @@ import Detail from './Detail'
 ReactDOM.render(
     <Router>
         <Route exact path="/" component={App}></Route>
-        <Route exact path="/detail" component={Detail}></Route>
+        <Route exact path="/detail/:id" component={Detail}></Route>
     </Router>,
     document.getElementById('root')
 )

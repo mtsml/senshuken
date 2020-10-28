@@ -17,6 +17,10 @@ export const getSenshukens = () => {
     return callApi('/senshuken')
 }
 
+export const getSenshuken = (id) => {
+    return callApi(`/senshuken/${id}`)
+}
+
 const callApi = (url) => {
     return client.get(url)
         .then(response =>  response.data)

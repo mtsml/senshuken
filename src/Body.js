@@ -1,13 +1,29 @@
 import React from 'react'
 import Quiz from './Quiz'
+import { getSenshukens } from './api/api'
 
 
 export default class Body extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            senshukens: []
+        }
+    }
+
+    componentDidMount() {
+        this.getSenshukens()
+    }
+
+    async getSenshukens() {
+        const data = await getSenshukens()
+        this.setState({senshukens: data.senshuken})
+    }
+
     render() {
-        const quizes = ['クイズA','クイズB','クイズC']
         return (
             <div className='center'>
-                {quizes.map(function(quiz) {
+                {this.state.senshukens.map(function(quiz) {
                     return (
                         <Quiz quiz={quiz} />
                     )
