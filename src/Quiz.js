@@ -9,6 +9,8 @@ export default class Quiz extends React.Component {
                 <h2>
                     <Link to={`/detail/${this.props.quiz.id}`}>{this.props.quiz.name}</Link>
                 </h2>
+                <p>{this.props.quiz}の説明です</p>
+                <button href="#" class="btn-stitch">BUTTON</button>
             </div>
         )
     }
