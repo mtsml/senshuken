@@ -5,8 +5,8 @@ export default class Header extends React.Component {
     render() {
         return (
             <header>
-                <div class="logo">
-                    <a class="link" href="/">senshuken</a>
+                <div className="logo">
+                    <a className="link" href="/">senshuken</a>
                 </div>
             </header>
         )
