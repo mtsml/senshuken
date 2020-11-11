@@ -4,7 +4,9 @@ export default class Footer extends React.Component {
     render() {
         return (
             <footer className='center'>
-                footer
+                <div className="border-top">
+                    <p>&copy; 2020 Jack.inc.</p>
+                </div>
             </footer>
         )
     }
