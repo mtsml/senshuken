@@ -1,9 +1,8 @@
 import React from 'react'
 
-import Body from './Body'
 import Footer from './Footer'
 import Header from './Header'
-
+import Router from './Router'
 
 
 class App extends React.Component {
@@ -11,7 +10,7 @@ class App extends React.Component {
         return (
             <>
                 <Header />
-                <Body />
+                <Router />
                 <Footer />
             </>
         )

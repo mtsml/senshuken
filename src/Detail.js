@@ -1,7 +1,8 @@
 import React from 'react'
-import {MDBContainer} from 'mdbreact'
+import { MDBContainer } from 'mdbreact'
+
 import Button from './component/Button'
-import {getSenshuken} from './api/api'
+import { getSenshuken } from './api/api'
 
 
 class Detail extends React.Component {
