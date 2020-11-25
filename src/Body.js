@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Quiz from './Quiz'
+import Senshuken from './Senshuken'
 import { getSenshukens } from './api/api'
 
 
@@ -26,7 +26,7 @@ export default class Body extends React.Component {
             <div className='center'>
                 {this.state.senshukens.map(function(quiz) {
                     return (
-                        <Quiz quiz={quiz} />
+                        <Senshuken quiz={quiz} />
                     )
                 })}
             </div>

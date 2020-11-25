@@ -1,17 +1,43 @@
 import React from 'react'
+import { MDBContainer } from 'mdbreact'
 
-import { Link } from "react-router-dom";
+import Button from './component/Button'
+// import { getSenshuken } from './api/api'
 
 
-export default class Quiz extends React.Component {
+class Quiz extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            title: 'サンプルタイトル',
+            desc: 'サンプル説明'
+        }
+    }
+
+    // componentDidMount() {
+    //     this.getSenshuken()
+    // }
+    //
+    // async getSenshuken() {
+    //     const data = await getSenshuken(this.props.match.params.id)
+    //     this.setState({
+    //         title: data.senshuken.name,
+    //         desc: data.senshuken.desc
+    //     })
+    // }
+
+
     render() {
+      console.log(this.props.match.params.senshuken_id);
+      console.log(this.props.match.params.quiz_id);
         return (
-            <div className="content">
-                <h2>
-                    <Link to={`/detail/${this.props.quiz.id}`}>{this.props.quiz.name}</Link>
-                </h2>
-
-            </div>
+            <MDBContainer className='text-center'>
+                <h1>Quiz</h1>
+                <p>Quiz2</p>
+                <Button message='start' />
+            </MDBContainer>
         )
     }
 }
+
+export default Quiz
