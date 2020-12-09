@@ -1,12 +1,10 @@
 import React from 'react'
-import { MDBContainer } from 'mdbreact'
-
+import {MDBContainer} from 'mdbreact'
 import Button from './component/Button'
 import {getSenshuken} from './api/api'
-import { Link } from "react-router-dom"
 
 
-class Detail extends React.Component {
+class Answer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -20,10 +18,10 @@ class Detail extends React.Component {
     }
 
     async getSenshuken() {
-        const data = await getSenshuken(this.props.match.params.id)
+        // const data = await getSenshuken(this.props.match.params.id)
         this.setState({
-            title: data.senshuken.name,
-            desc: data.senshuken.desc
+            title: '第1問',
+            desc: 'これはなんでしょう？'
         })
     }
 
@@ -32,10 +30,14 @@ class Detail extends React.Component {
             <MDBContainer className='text-center'>
                 <h1>{this.state.title}</h1>
                 <p>{this.state.desc}</p>
-                <Button message='start' />
+                <div className='center'>
+                    <Button message='A:いぬ' />
+                    <Button message='B:ねこ' />
+                    <Button message='C:ぱんだ' />
+                </div>
             </MDBContainer>
         )
     }
 }
 
-export default Detail
+export default Answer
