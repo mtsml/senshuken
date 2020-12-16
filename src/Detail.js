@@ -1,7 +1,6 @@
 import React from 'react'
 import { MDBContainer } from 'mdbreact'
 
-import Button from './component/Button'
 import {getSenshuken} from './api/api'
 import { Link } from "react-router-dom"
 
@@ -32,7 +31,7 @@ class Detail extends React.Component {
             <MDBContainer className='text-center'>
                 <h1>{this.state.title}</h1>
                 <p>{this.state.desc}</p>
-                <Button message='start' />
+                <Link to='/answer'>start</Link>
             </MDBContainer>
         )
     }
