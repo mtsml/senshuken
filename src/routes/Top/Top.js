@@ -1,10 +1,10 @@
 import React from 'react'
 
 import Quiz from './Quiz'
-import { getSenshukens } from './api/api'
+import { getSenshukens } from '../../api/api'
 
 
-export default class Body extends React.Component {
+export default class Top extends React.Component {
     constructor(props) {
         super(props)
         this.state = {

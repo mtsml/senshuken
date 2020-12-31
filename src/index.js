@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import App from './App'
+import Router from './routes/Router'
 
 import "@fortawesome/fontawesome-free/css/all.min.css"
 import "bootstrap-css-only/css/bootstrap.min.css"
@@ -10,6 +10,6 @@ import "./css/senshuken.css"
 
 
 ReactDOM.render(
-    <App />,
+    <Router />,
     document.getElementById('root')
 )
