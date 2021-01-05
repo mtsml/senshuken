@@ -1,7 +1,7 @@
 import React from 'react'
 import {MDBContainer} from 'mdbreact'
-import Button from './component/Button'
-import {getSenshuken2} from './api/api'
+import Button from '../../components/Button'
+import {getSenshuken2} from '../../api/api'
 
 
 

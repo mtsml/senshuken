@@ -1,7 +1,7 @@
 import React from 'react'
 import { MDBContainer } from 'mdbreact'
 
-import {getSenshuken} from './api/api'
+import {getSenshuken} from '../../api/api'
 import { Link } from "react-router-dom"
 
 
