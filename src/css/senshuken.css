@@ -1,90 +1,95 @@
 header, body, footer {
-    font-family: “游ゴシック体“, “Helvetica Neue”,Arial,“Hiragino Kaku Gothic ProN”,“Hiragino Sans”,Meiryo,sans-serif;
-    color: #66484B;
-  }
-  a {
-    text-decoration: none;
-    color: #66484b;
-  }
-  a:hover, a:focus {
-    opacity: 0.5;
-    transition: 0.5s;
-    color: #66484b;
-  }
-  input:focus, button:focus {
-    outline-color: #AC9F58;
-    outline-width: medium;
-    transition: 0.2s;
-  }
-  a:focus{
-    outline: none;
-  }
-  footer {
-      background-color: #58ac9f;
-      color: #FFF;
-      width: 100%;
-      height:70px;
-  }
+  font-family: “游ゴシック体“, “Helvetica Neue”,Arial,“Hiragino Kaku Gothic ProN”,“Hiragino Sans”,Meiryo,sans-serif;
+  color: #66484B;
+}
+a {
+  text-decoration: none;
+  color: #66484b;
+}
+a:hover, a:focus {
+  opacity: 0.5;
+  transition: 0.5s;
+  color: #66484b;
+}
+input:focus, button:focus {
+  outline-color: #AC9F58;
+  outline-width: medium;
+  transition: 0.2s;
+}
+a:focus{
+  outline: none;
+}
+footer {
+  background-color: #58ac9f;
+  color: #FFF;
+  width: 100%;
+  height:70px;
+}
 main {
-    margin: 20px;
-    min-height: 700px;
+  min-height: 620px;
+  padding: 20px;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 header {
-    background-color: #58ac9f;
-    color: #aaaaaa;
-    font-size: 30px;
-    padding: 30px;
-    width: 100%;
+  background-color: #58ac9f;
+  color: #aaaaaa;
+  font-size: 30px;
+  padding: 30px;
+  width: 100%;
 
 }
 .logo {
-    background-color: #66484b;
-    width: 180px;
-    height: 70px;
-    text-align: center;
+  background-color: #66484b;
+  width: 180px;
+  height: 70px;
+  text-align: center;
 }
 .logo a{
-    color:#58ac9f;
-    line-height: 70px;
+  color:#58ac9f;
+  line-height: 70px;
 }
 
 
 a:focus{
-    color: #fff;
+  color: #fff;
 }
 .right{
-    position: absolute;
-    right: 20px;
+  position: absolute;
+  right: 20px;
 }
 .btn-stitch {
-    display: inline-block;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    background: #58ac9f;
-    color:#66484b;
-    border-radius: 4px;
-    box-shadow: 0px 0px 0px 5px#58ac9f;
-    border: dashed 2px #FFF;
-    margin: 2px;
-  }
-  
-  .btn-stitch:hover {
-    border: dotted 1px #FFF;
-    margin-bottom: 4px;
-  }
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #58ac9f;
+  color:#66484b;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 5px#58ac9f;
+  border: dashed 2px #FFF;
+  margin: 2px;
+  min-width: 200px;
+}
 
-  button::before {
-    content: ' ● ';
-  }
-  button::after {
-    content: ' ● ';
-  }
+.answer-btn {
+  margin: 20px 0px;
+}
 
-  .content {
-      margin-bottom: 20px;
-  }
+.btn-stitch:hover {
+  border: dotted 1px #FFF;
+  margin-bottom: 4px;
+}
+
+button::before {
+  content: ' ● ';
+}
+button::after {
+  content: ' ● ';
+}
+
+.content {
+  margin-bottom: 20px;
+}

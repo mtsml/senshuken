@@ -31,9 +31,15 @@ class Answer extends React.Component {
                 <h1>{this.state.title}</h1>
                 <p>{this.state.desc}</p>
                 <div className='center'>
+                  <div className='answer-btn'>
                     <Button message='A:いぬ' />
+                  </div>
+                  <div className='answer-btn'>
                     <Button message='B:ねこ' />
+                  </div>
+                  <div className='answer-btn'>
                     <Button message='C:ぱんだ' />
+                  </div>
                 </div>
             </MDBContainer>
         )
