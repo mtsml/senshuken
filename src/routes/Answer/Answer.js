@@ -31,7 +31,7 @@ class Answer extends React.Component {
       const list = [];
       for (let i = 0; i < answer.length; i++) {
       list.push(
-          <div className='answer-btn'><Button message={answer[i]}/></div>
+          <div className='answer-btn'><Button message={answer[i]} link='' history={this.props.history}/></div>
         )
       }
         return (
