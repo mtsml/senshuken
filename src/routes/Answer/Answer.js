@@ -25,21 +25,21 @@ class Answer extends React.Component {
         })
     }
 
+
     render() {
+      const answer = ['A:いぬ','B:ねこ','C:ぱんだ'];
+      const list = [];
+      for (let i = 0; i < answer.length; i++) {
+      list.push(
+          <div className='answer-btn'><Button message={answer[i]}/></div>
+        )
+      }
         return (
             <MDBContainer className='text-center'>
                 <h1>{this.state.title}</h1>
                 <p>{this.state.desc}</p>
                 <div className='center'>
-                  <div className='answer-btn'>
-                    <Button message='A:いぬ' />
-                  </div>
-                  <div className='answer-btn'>
-                    <Button message='B:ねこ' />
-                  </div>
-                  <div className='answer-btn'>
-                    <Button message='C:ぱんだ' />
-                  </div>
+                  {list}
                 </div>
             </MDBContainer>
         )
