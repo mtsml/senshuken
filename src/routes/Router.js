@@ -14,12 +14,14 @@ export default class Router extends React.Component {
         return (
             <>
                 <Header/>
-                <BrowserRouter>
-                    <Route exact path="/" component={Top}></Route>
-                    <Route exact path="/detail/:id" component={Detail}></Route>
-                    <Route exact path="/result/:id" component={Result}></Route>
-                    <Route exact path="/answer" component={Answer}></Route>
-                </BrowserRouter>
+                <main>
+                    <BrowserRouter>
+                        <Route exact path="/" component={Top}></Route>
+                        <Route exact path="/detail/:id" component={Detail}></Route>
+                        <Route exact path="/result/:id" component={Result}></Route>
+                        <Route exact path="/answer" component={Answer}></Route>
+                    </BrowserRouter>
+                </main>
                 <Footer/>
             </>
         )
