@@ -1,6 +1,5 @@
 import React from 'react'
 import {MDBContainer} from 'mdbreact'
-import Button from '../../components/Button'
 import {getSenshuken} from '../../api/api'
 
 
@@ -9,7 +8,8 @@ class Answer extends React.Component {
         super(props)
         this.state = {
             title: 'サンプルタイトル',
-            desc: 'サンプル説明'
+            desc: 'サンプル説明',
+            answer: ''
         }
     }
 
@@ -24,14 +24,16 @@ class Answer extends React.Component {
             desc: 'これはなんでしょう？'
         })
     }
-
-
     render() {
       const answer = ['A:いぬ','B:ねこ','C:ぱんだ'];
       const list = [];
       for (let i = 0; i < answer.length; i++) {
       list.push(
-          <div className='answer-btn'><Button message={answer[i]} link='' history={this.props.history}/></div>
+          <div className='answer-btn' key={i}>
+            <button className='btn-stitch' onClick={() => this.setState({answer: "○"})}>
+                {answer[i]}
+            </button>
+          </div>
         )
       }
         return (
@@ -41,6 +43,7 @@ class Answer extends React.Component {
                 <div className='center'>
                   {list}
                 </div>
+                <h1>{this.state.answer}</h1>
             </MDBContainer>
         )
     }
