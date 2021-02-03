@@ -1,6 +1,7 @@
 import React from 'react'
 import {MDBContainer} from 'mdbreact'
 import {getSenshuken} from '../../api/api'
+import Button from '../../components/Button'
 
 
 class Answer extends React.Component {
@@ -30,7 +31,7 @@ class Answer extends React.Component {
       for (let i = 0; i < answer.length; i++) {
       list.push(
           <div className='answer-btn' key={i}>
-            <button className='btn-stitch' onClick={() => this.setState({answer: "○"})}>
+            <button className='btn-stitch btn-stitch-gray' onClick={() => this.setState({answer: "○"})}>
                 {answer[i]}
             </button>
           </div>
@@ -43,7 +44,9 @@ class Answer extends React.Component {
                 <div className='center'>
                   {list}
                 </div>
+                <br/><br/><br/><br/>
                 <h1>{this.state.answer}</h1>
+                <Button message='next' link='/' history={this.props.history} color='btn-stitch-green'/ >
             </MDBContainer>
         )
     }

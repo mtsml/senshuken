@@ -65,13 +65,23 @@ a:focus{
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
-  background: #58ac9f;
-  color:#66484b;
   border-radius: 4px;
-  box-shadow: 0px 0px 0px 5px#58ac9f;
-  border: dashed 2px #FFF;
   margin: 2px;
   min-width: 200px;
+}
+
+.btn-stitch-green {
+  background: #58ac9f;
+  color:#66484b;
+  box-shadow: 0px 0px 0px 5px#58ac9f;
+  border: dashed 2px #FFF;
+}
+
+.btn-stitch-gray {
+  background: #e6e6e6;
+  color:#66484b;
+  box-shadow: 0px 0px 0px 5px#e6e6e6;
+  border: dashed 2px #aaac8f;
 }
 
 .answer-btn {
