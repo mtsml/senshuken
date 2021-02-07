@@ -24,9 +24,6 @@
     "eject": "react-scripts eject",
     "client": "react-scripts start"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
