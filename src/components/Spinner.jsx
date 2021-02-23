@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Spinner = (props) => {
   const { color, width, height } = props;
@@ -14,6 +15,12 @@ const Spinner = (props) => {
       </div>
     </div>
   );
+};
+
+Spinner.propTypes = {
+  color: PropTypes.string,
+  width: PropTypes.string,
+  height: PropTypes.string,
 };
 
 Spinner.defaultProps = {
