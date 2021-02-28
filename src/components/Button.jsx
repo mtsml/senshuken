@@ -11,7 +11,7 @@ export default class Button extends React.Component {
     const { color, message } = this.props;
     const css = `btn-stitch ${color}`;
     return (
-      <button type="button" className={css} onClick={this.handleToAboutPage}>
+      <button type="button" className={css} onClick={() => this.handleToAboutPage()}>
         {message}
       </button>
     );
