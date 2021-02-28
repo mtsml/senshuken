@@ -1,6 +1,6 @@
 import React from 'react';
 import { MDBContainer } from 'mdbreact';
-import { getSenshuken } from '../../api/api';
+import PropTypes from 'prop-types';
 import Button from '../../components/Button';
 
 class Answer extends React.Component {
@@ -26,21 +26,23 @@ class Answer extends React.Component {
   }
 
   render() {
-    const answer = ['A:いぬ', 'B:ねこ', 'C:ぱんだ'];
+    const answerlist = ['A:いぬ', 'B:ねこ', 'C:ぱんだ'];
     const list = [];
-    for (let i = 0; i < answer.length; i++) {
+    const { title, desc, answer } = this.state;
+    const { history } = this.props;
+    for (let i = 0; i < answerlist.length; i += 1) {
       list.push(
         <div className="answer-btn" key={i}>
-          <button className="btn-stitch btn-stitch-gray" onClick={() => this.setState({ answer: '○' })}>
-            {answer[i]}
+          <button className="btn-stitch btn-stitch-gray" type="submit" onClick={() => this.setState({ answer: '○' })}>
+            {answerlist[i]}
           </button>
         </div>,
       );
     }
     return (
       <MDBContainer className="text-center">
-        <h1>{this.state.title}</h1>
-        <p>{this.state.desc}</p>
+        <h1>{title}</h1>
+        <p>{desc}</p>
         <div className="center">
           {list}
         </div>
@@ -48,11 +50,17 @@ class Answer extends React.Component {
         <br />
         <br />
         <br />
-        <h1>{this.state.answer}</h1>
-        <Button message="next" link="/" history={this.props.history} color="btn-stitch-green" />
+        <h1>{answer}</h1>
+        <Button message="next" link="/" history={history} color="btn-stitch-green" />
       </MDBContainer>
     );
   }
 }
+Answer.propTypes = {
+  history: PropTypes.arrayOf(PropTypes.string),
+};
 
+Answer.defaultProps = {
+  history: [],
+};
 export default Answer;
