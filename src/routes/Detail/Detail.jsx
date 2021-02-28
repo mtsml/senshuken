@@ -35,7 +35,7 @@ class Detail extends React.Component {
       <MDBContainer className="text-center">
         <h1>{title}</h1>
         <p>{desc}</p>
-        <Button message="start" link="/Detail" history={history} />
+        <Button message="start" link="/answer" history={history} />
       </MDBContainer>
     );
   }
