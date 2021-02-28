@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { MDBContainer } from 'mdbreact';
-import { Link } from 'react-router-dom';
+
 import Button from '../../components/Button';
 import { getSenshuken } from '../../api/api';
 
@@ -18,7 +19,8 @@ class Detail extends React.Component {
   }
 
   async getSenshuken() {
-    const data = await getSenshuken(this.props.match.params.id);
+    const { match } = this.props;
+    const data = await getSenshuken(match.params.id);
     this.setState({
       title: data.senshuken.name,
       desc: data.senshuken.desc,
@@ -26,14 +28,27 @@ class Detail extends React.Component {
   }
 
   render() {
+    const { title, desc } = this.state;
+    const { history } = this.props;
+
     return (
       <MDBContainer className="text-center">
-        <h1>{this.state.title}</h1>
-        <p>{this.state.desc}</p>
-        <Button message="start" link="/answer" history={this.props.history} />
+        <h1>{title}</h1>
+        <p>{desc}</p>
+        <Button message="start" link="/Detail" history={history} />
       </MDBContainer>
     );
   }
 }
+
+Detail.propTypes = {
+  history: PropTypes.arrayOf(PropTypes.string),
+  match: PropTypes.shape(PropTypes.shape(PropTypes.string)),
+};
+
+Detail.defaultProps = {
+  history: [],
+  match: {},
+};
 
 export default Detail;
