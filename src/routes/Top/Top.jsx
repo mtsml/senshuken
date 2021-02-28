@@ -21,9 +21,10 @@ export default class Top extends React.Component {
   }
 
   render() {
+    const { senshukens } = this.state;
     return (
       <div className="center">
-        {this.state.senshukens.map((quiz) => (
+        {senshukens.map((quiz) => (
           <Quiz quiz={quiz} />
         ))}
       </div>

@@ -12,7 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const callApi = (url) => client.get(url)
   .then((response) => response.data)
-  .catch((err) => alert(err)); // TODO: ErrorBoundary実装
+  .catch((err) => new Error(err)); // TODO: ErrorBoundary実装
 
 export const getSenshukens = () => callApi('/senshuken');
 
