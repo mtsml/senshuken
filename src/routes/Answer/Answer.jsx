@@ -25,6 +25,16 @@ class Answer extends React.Component {
     });
   }
 
+  judge(item) {
+    let answer = '×'
+    if (item == 'A:いぬ'){
+      answer = '○'
+    }
+    this.setState({
+      answer: answer
+    });
+  }
+
   render() {
     const answerlist = ['A:いぬ', 'B:ねこ', 'C:ぱんだ'];
     const list = [];
@@ -33,7 +43,7 @@ class Answer extends React.Component {
     for (let i = 0; i < answerlist.length; i += 1) {
       list.push(
         <div className="answer-btn" key={i}>
-          <button className="btn-stitch btn-stitch-gray" type="submit" onClick={() => this.setState({ answer: '○' })}>
+          <button className="btn-stitch btn-stitch-gray" type="submit" onClick={() => this.judge(answerlist[i])}>
             {answerlist[i]}
           </button>
         </div>,
