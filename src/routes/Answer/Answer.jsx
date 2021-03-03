@@ -26,12 +26,12 @@ class Answer extends React.Component {
   }
 
   judge(item) {
-    let answer = '×'
-    if (item == 'A:いぬ'){
-      answer = '○'
+    let answer = '×';
+    if (item === 'A:いぬ') {
+      answer = '○';
     }
     this.setState({
-      answer: answer
+      answer,
     });
   }
 
