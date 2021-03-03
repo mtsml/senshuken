@@ -7,9 +7,9 @@ const client = axios.create({
   baseURL: apiUrl,
 });
 
-if (process.env.NODE_ENV !== 'production') {
-  mock.run(client);
-}
+// APIの開発が遅れるため一時的に本番環境でもmockを利用する
+mock.run(client);
+
 const callApi = (url) => client.get(url)
   .then((response) => response.data)
   .catch((err) => new Error(err)); // TODO: ErrorBoundary実装
