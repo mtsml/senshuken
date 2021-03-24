@@ -24,18 +24,20 @@ const SENSHUKEN = [
 
 const calScore = (senshukens) => {
   let trueCnt = 0;
-  for (let i = 0; i < senshukens.length; i++) {
+  for (let i = 0; i < senshukens.length; i += 1) {
     if (senshukens[i].answer === true) {
-      trueCnt++;
+      trueCnt += 1;
     }
   }
   return trueCnt;
-}
+};
 
 const Result = () => (
   <MDBContainer className="text-center">
     <div>
-      {calScore(SENSHUKEN)} / {SENSHUKEN.length}
+      {calScore(SENSHUKEN)}
+      /
+      {SENSHUKEN.length}
     </div>
   </MDBContainer>
 );
