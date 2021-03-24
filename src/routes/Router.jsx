@@ -15,7 +15,7 @@ const Router = () => (
       <BrowserRouter>
         <Route exact path="/" component={Top} />
         <Route exact path="/detail/:id" component={Detail} />
-        <Route exact path="/result/:id" component={Result} />
+        <Route exact path="/result" component={Result} />
         <Route exact path="/answer" component={Answer} />
       </BrowserRouter>
     </main>

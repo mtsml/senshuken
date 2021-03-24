@@ -61,7 +61,7 @@ class Answer extends React.Component {
         <br />
         <br />
         <h1>{answer}</h1>
-        <Button message="next" link="/" history={history} color="btn-stitch-green" />
+        <Button message="next" link="/result" history={history} color="btn-stitch-green" />
       </MDBContainer>
     );
   }
