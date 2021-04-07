@@ -17,6 +17,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-minimal-pie-chart": "^8.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2"
   },
@@ -26,7 +27,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "client": "react-scripts start",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "fix": "eslint src --fix"
   },
   "browserslist": {
     "production": [

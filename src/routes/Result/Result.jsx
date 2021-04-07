@@ -32,14 +32,32 @@ const calScore = (senshukens) => {
   return trueCnt;
 };
 
-const Result = () => (
-  <MDBContainer className="text-center">
-    <div>
-      {calScore(SENSHUKEN)}
-      /
-      {SENSHUKEN.length}
-    </div>
-  </MDBContainer>
-);
+import { PieChart } from 'react-minimal-pie-chart';
+
+
+
+const Result = () => {
+  const trueCnt = calScore(SENSHUKEN);
+  const totalCnt = SENSHUKEN.length;
+
+  return (
+    <MDBContainer className="text-center">
+      <PieChart
+        animate={true}
+        animationDuration={1000}
+        startAngle={270}
+        data={[{ value: trueCnt, color: '#58ac9f' }]}
+        totalValue={SENSHUKEN.length}
+        lineWidth={20}
+        label={({ dataEntry }) => dataEntry.value + '/' + totalCnt }
+        labelStyle={{
+          fontSize: '25px',
+          fontFamily: 'sans-serif',
+          fill: '#66484b',
+        }}
+        labelPosition={0}
+      />
+    </MDBContainer>
+)};
 
 export default Result;
