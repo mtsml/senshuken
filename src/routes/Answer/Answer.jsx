@@ -53,13 +53,9 @@ class Answer extends React.Component {
       <MDBContainer className="text-center">
         <h1>{title}</h1>
         <p>{desc}</p>
-        <div className="center">
+        <div className="center mb-5">
           {list}
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
         <h1>{answer}</h1>
         <Button message="next" link="/result" history={history} color="btn-stitch-green" />
       </MDBContainer>

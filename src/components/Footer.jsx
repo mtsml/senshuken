@@ -1,11 +1,12 @@
 import React from 'react';
+import { MDBFooter } from 'mdbreact';
 
 const Footer = () => (
-  <footer className="center">
+  <MDBFooter className="center">
     <div className="border-top">
       <p>&copy; 2020 Jack.inc.</p>
     </div>
-  </footer>
+  </MDBFooter>
 );
 
 export default Footer;
